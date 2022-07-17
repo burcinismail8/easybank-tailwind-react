@@ -15,6 +15,9 @@ module.exports = {
     fontFamily: {
       body: "'Public Sans', sans-serif",
     },
+    maxWidth: {
+      85: "85%",
+    },
   },
   plugins: [],
 };

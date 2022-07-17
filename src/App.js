@@ -2,7 +2,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App font-body ">
+    <div className="App font-body overflow-x-hidden">
       <div className="header h-screen">
         <nav className="md:flex flex-row justify-around items-center h-20">
           <div className="logo ">
@@ -31,8 +31,8 @@ function App() {
             <a href="/">Request Invite</a>
           </div>
         </nav>
-        <header className="md:flex flex-row items-center h-4/5 justify-around bg-very-light-gray">
-          <div className="text-content w-2/5 pl-12">
+        <header className="md:flex flex-row items-center h-4/5 justify-between bg-very-light-gray">
+          <div className="text-content w-2/5 pl-28">
             <div className="heading text-dark-blue text-6xl text-left my-5 font-light leading-tight">
               Next generation digital banking
             </div>
@@ -41,11 +41,20 @@ function App() {
               one-stop-shop for spending, saving, budgeting, investing, and much
               more.
             </div>
-            <div className="registerButton bg-gradient-to-r from-lime-green to-bright-cyan hover:from-light-lime-green hover:to-light-bright-cyan cursor-pointer text-very-light-gray mt-2 px-8 py-3 rounded-full font-semibold w-1/3">
+            <div className="registerButton bg-gradient-to-r from-lime-green to-bright-cyan hover:from-light-lime-green hover:to-light-bright-cyan cursor-pointer text-very-light-gray mt-2 px-8 py-3 rounded-full font-semibold w-1/2">
               <a href="/">Request Invite</a>
             </div>
           </div>
-          <div className="w-2/5"></div>
+          <div
+            className="w-1/2 h-full"
+            style={{ backgroundImage: "url(/images/bg-intro-desktop.svg)" }}
+          >
+            <img
+              src="/images/image-mockups.png"
+              alt="logo"
+              className="max-w-85 ml-56"
+            />
+          </div>
         </header>
       </div>
       <div className="main flex-row ">
