@@ -111,6 +111,94 @@ function App() {
             </li>
           </ul>
         </div>
+        <div className="section-2 bg-fafafa p-14">
+          <div className="w-1/2 ml-10">
+            <div className=" text-dark-blue text-4xl text-left my-5 font-light leading-tight">
+              Latest Articles
+            </div>
+          </div>
+          <ul className="list flex flex-row justify-between px-9 py-10 max-h-470">
+            <li className="card w-1/5 bg-white rounded-md">
+              <img
+                src="/images/image-currency.jpg"
+                alt="logo"
+                className="rounded-t-md w-full h-48"
+              />
+              <div className="content p-4">
+                <div className="createdBy text-grayish-blue text-left text-xs">
+                  By Claire Robinson
+                </div>
+                <div className=" text-dark-blue text-lg text-left my-2 font-light leading-tight">
+                  Receive money in any currency with no fees
+                </div>
+                <div className="description text-grayish-blue text-left text-sm leading-relaxed">
+                  The world is getting smaller and we’re becoming more mobile.
+                  So why should you be forced to only receive money in a single
+                  …
+                </div>
+              </div>
+            </li>
+            <li className="card w-1/5 bg-white rounded-md">
+              <img
+                src="/images/image-restaurant.jpg"
+                alt="logo"
+                className="rounded-t-md w-full h-48"
+              />
+              <div className="content p-4">
+                <div className="createdBy text-grayish-blue text-left text-xs">
+                  By Wilson Hutton
+                </div>
+                <div className=" text-dark-blue text-lg text-left my-2 font-light leading-tight">
+                  Treat yourself without worrying about money
+                </div>
+                <div className="description text-grayish-blue text-left text-sm leading-relaxed">
+                  Our simple budgeting feature allows you to separate out your
+                  spending and set realistic limits each month. That means you …
+                </div>
+              </div>
+            </li>
+            <li className="card w-1/5 bg-white rounded-md">
+              <img
+                src="/images/image-plane.jpg"
+                alt="logo"
+                className="rounded-t-md w-full h-48"
+              />
+              <div className="content p-4">
+                <div className="createdBy text-grayish-blue text-left text-xs">
+                  By Wilson Hutton
+                </div>
+                <div className=" text-dark-blue text-lg text-left my-2 font-light leading-tight">
+                  Take your Easybank card wherever you go
+                </div>
+                <div className="description text-grayish-blue text-left text-sm leading-relaxed">
+                  We want you to enjoy your travels. This is why we don’t charge
+                  any fees on purchases while you’re abroad. We’ll even show you
+                  …
+                </div>
+              </div>
+            </li>
+            <li className="card w-1/5 bg-white rounded-md">
+              <img
+                src="/images/image-confetti.jpg"
+                alt="logo"
+                className="rounded-t-md w-full h-48"
+              />
+              <div className="content p-4">
+                <div className="createdBy text-grayish-blue text-left text-xs">
+                  By Claire Robinson
+                </div>
+                <div className=" text-dark-blue text-lg text-left my-2 font-light leading-tight">
+                  Our invite-only Beta accounts are now live!
+                </div>
+                <div className="description text-grayish-blue text-left text-sm leading-relaxed">
+                  After a lot of hard work by the whole team, we’re excited to
+                  launch our closed beta. It’s easy to request an invite through
+                  the site ...
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
       {/* <img src="/images/bg-intro-desktop.svg" alt="logo" /> */}
     </div>
