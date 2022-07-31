@@ -1,14 +1,50 @@
 import "./App.css";
 
 function App() {
+  const onClickHamburger = () => {
+    const hamburger = document.querySelector(".hamburger");
+    const close = document.querySelector(".close");
+    const menu = document.querySelector(".res-menu");
+    hamburger.classList.remove("block");
+    hamburger.classList.add("hidden");
+    close.classList.remove("hidden");
+    close.classList.add("block");
+    menu.classList.remove("hidden");
+    menu.classList.add("block");
+  };
+  const onClickClose = () => {
+    const hamburger = document.querySelector(".hamburger");
+    const close = document.querySelector(".close");
+    const menu = document.querySelector(".res-menu");
+    close.classList.remove("block");
+    close.classList.add("hidden");
+    hamburger.classList.remove("hidden");
+    hamburger.classList.add("block");
+    menu.classList.remove("block");
+    menu.classList.add("hidden");
+  };
   return (
     <div className="App font-body overflow-x-hidden">
-      <div className="header h-screen">
-        <nav className="md:flex flex-row justify-around items-center h-20">
-          <div className="logo ">
+      <div className="header md:h-screen">
+        <nav className="md:flex flex-row justify-around items-center md:h-20 h-10">
+          <div className="logo flex justify-between items-center my-5 mx-4">
             <img src="/images/logo.svg" alt="logo" />
+            <div className="md:hidden">
+              <img
+                onClick={onClickHamburger}
+                src="/images/icon-hamburger.svg"
+                alt="hamburger"
+                className="hamburger cursor-pointer block"
+              />
+              <img
+                onClick={onClickClose}
+                src="/images/icon-close.svg"
+                alt="close"
+                className="close cursor-pointer hidden "
+              />
+            </div>
           </div>
-          <div className="menu w-1/4">
+          <div className="menu w-1/4 md:block hidden">
             <ul className="md:flex justify-around">
               <li className="text-grayish-blue hover:text-dark-blue hover:underline hover:decoration-lime-green">
                 <a href="/">Home</a>
@@ -27,16 +63,35 @@ function App() {
               </li>
             </ul>
           </div>
-          <div className="registerButton bg-gradient-to-r from-lime-green to-bright-cyan hover:from-light-lime-green hover:to-light-bright-cyan cursor-pointer text-very-light-gray px-8 py-3 rounded-full font-semibold">
+          <div className="registerButton bg-gradient-to-r from-lime-green to-bright-cyan hover:from-light-lime-green hover:to-light-bright-cyan cursor-pointer text-very-light-gray px-8 py-3 rounded-full font-semibold md:block hidden">
             <a href="/">Request Invite</a>
           </div>
         </nav>
-        <header className="md:flex flex-row items-center h-4/5 justify-between bg-very-light-gray">
-          <div className="text-content w-2/5 pl-28">
-            <div className="heading text-dark-blue text-6xl text-left my-5 font-light leading-tight">
+        <div className="res-menu md:hidden hidden mb-8">
+          <ul className="flex flex-col justify-around">
+            <li className="text-grayish-blue text-xl py-3 hover:text-dark-blue hover:underline hover:decoration-lime-green">
+              <a href="/">Home</a>
+            </li>
+            <li className="text-grayish-blue text-xl py-3 hover:text-dark-blue hover:underline hover:decoration-lime-green">
+              <a href="/">About</a>
+            </li>
+            <li className="text-grayish-blue text-xl py-3 hover:text-dark-blue hover:underline hover:decoration-lime-green">
+              <a href="/">Contact</a>
+            </li>
+            <li className="text-grayish-blue text-xl py-3 hover:text-dark-blue hover:underline hover:decoration-lime-green">
+              <a href="/">Blog</a>
+            </li>
+            <li className="text-grayish-blue text-xl py-3 hover:text-dark-blue hover:underline hover:decoration-lime-green">
+              <a href="/">Careers</a>
+            </li>
+          </ul>
+        </div>
+        <header className="flex md:flex-row flex-col-reverse items-center md:h-4/5 justify-between md:bg-very-light-gray md:mb-0 mb-14">
+          <div className="flex flex-col items-center text-content md:w-2/5 w-4/5 md:pl-28">
+            <div className="heading text-dark-blue md:text-6xl text-5xl md:text-left my-5 md:font-light leading-tight">
               Next generation digital banking
             </div>
-            <div className="description text-grayish-blue text-left pt-3 pb-6 text-lg leading-relaxed">
+            <div className="description text-grayish-blue md:text-left text-justify pt-3 pb-6 text-lg leading-relaxed">
               Take your financial life online. Your Easybank account will be a
               one-stop-shop for spending, saving, budgeting, investing, and much
               more.
@@ -46,79 +101,79 @@ function App() {
             </div>
           </div>
           <div
-            className="w-1/2 h-full"
+            className="md:w-1/2 md:h-full"
             style={{ backgroundImage: "url(/images/bg-intro-desktop.svg)" }}
           >
             <img
               src="/images/image-mockups.png"
               alt="logo"
-              className="max-w-85 ml-56"
+              className="md:max-w-85 md:ml-56"
             />
           </div>
         </header>
       </div>
-      <div className="main flex-row ">
-        <div className="section-1 bg-light-grayish-blue p-20 pb-10">
-          <div className="w-1/2 ml-10">
-            <div className=" text-dark-blue text-4xl text-left my-5 font-light leading-tight">
+      <div className="main flex-row">
+        <div className="section-1 bg-light-grayish-blue md:p-20 md:pb-10 p-5">
+          <div className="flex flex-col items-center md:w-1/2 md:ml-10 mf:mb-0 mb-10">
+            <div className=" text-dark-blue w-4/5 text-4xl md:text-left items-center my-5 font-light md:leading-tight">
               Why choose Easybank?
             </div>
-            <div className="description text-grayish-blue text-left pb-6 text-lg leading-relaxed">
+            <div className="description text-grayish-blue md:text-left pb-6 text-lg leading-relaxed">
               We leverage Open Banking to turn your bank account into your
               financial hub. Control your finances like never before.
             </div>
           </div>
-          <ul className="list flex flex-row justify-between px-9 py-14">
-            <li className="w-1/5">
+          <ul className="list flex md:flex-row flex-col justify-between items-center md:px-9 md:py-14">
+            <li className="md:w-1/5 w-4/5 mb-5 flex flex-col items-center">
               <img src="/images/icon-online.svg" alt="logo" />
               <div className=" text-dark-blue text-2xl text-left my-5 font-light leading-tight">
                 Online Banking
               </div>
-              <div className="description text-grayish-blue text-left pb-6 text-base leading-relaxed">
+              <div className="description text-grayish-blue md:text-left pb-6 text-base leading-relaxed">
                 Our modern web and mobile applications allow you to keep track
                 of your finances wherever you are in the world.
               </div>
             </li>
-            <li className="w-1/5">
+            <li className="md:w-1/5 w-4/5 mb-5 flex flex-col items-center">
               <img src="/images/icon-budgeting.svg" alt="logo" />
               <div className=" text-dark-blue text-2xl text-left my-5 font-light leading-tight">
                 Simple Budgeting
               </div>
-              <div className="description text-grayish-blue text-left pb-6 text-base leading-relaxed">
+              <div className="description text-grayish-blue md:text-left pb-6 text-base leading-relaxed">
                 See exactly where your money goes each month. Receive
                 notifications when you’re close to hitting your limits.
               </div>
             </li>
-            <li className="w-1/5">
+            <li className="md:w-1/5 w-4/5 mb-5 flex flex-col items-center">
               <img src="/images/icon-onboarding.svg" alt="logo" />
               <div className=" text-dark-blue text-2xl text-left my-5 font-light leading-tight">
                 Fast Onboarding
               </div>
-              <div className="description text-grayish-blue text-left pb-6 text-base leading-relaxed">
+              <div className="description text-grayish-blue md:text-left pb-6 text-base leading-relaxed">
                 We don’t do branches. Open your account in minutes online and
                 start taking control of your finances right away.
               </div>
             </li>
-            <li className="w-1/5">
+            <li className="md:w-1/5 w-4/5 mb-5 flex flex-col items-center">
               <img src="/images/icon-api.svg" alt="logo" />
               <div className=" text-dark-blue text-2xl text-left my-5 font-light leading-tight">
                 Open API
               </div>
-              <div className="description text-grayish-blue text-left pb-6 text-base leading-relaxed">
+              <div className="description text-grayish-blue md:text-left pb-6 text-base leading-relaxed">
                 Manage your savings, investments, pension, and much more from
                 one account. Tracking your money has never been easier.
               </div>
             </li>
           </ul>
         </div>
-        <div className="section-2 bg-fafafa p-14">
-          <div className="w-1/2 ml-10">
+        <div className="section-2 bg-fafafa md:p-14 p-10">
+          <div className="md:w-1/2 md:ml-10">
             <div className=" text-dark-blue text-4xl text-left my-5 font-light leading-tight">
               Latest Articles
             </div>
           </div>
-          <ul className="list flex flex-row justify-between px-9 py-10 max-h-470">
-            <li className="card w-1/5 bg-white rounded-md">
+          <ul className="list flex md:flex-row flex-col justify-between md:px-9 md:py-10 md:max-h-470">
+            <li className="card md:w-1/5 mb-5 bg-white rounded-md">
               <img
                 src="/images/image-currency.jpg"
                 alt="logo"
@@ -138,7 +193,7 @@ function App() {
                 </div>
               </div>
             </li>
-            <li className="card w-1/5 bg-white rounded-md">
+            <li className="card md:w-1/5 mb-5 bg-white rounded-md">
               <img
                 src="/images/image-restaurant.jpg"
                 alt="logo"
@@ -157,7 +212,7 @@ function App() {
                 </div>
               </div>
             </li>
-            <li className="card w-1/5 bg-white rounded-md">
+            <li className="card md:w-1/5 mb-5 bg-white rounded-md">
               <img
                 src="/images/image-plane.jpg"
                 alt="logo"
@@ -177,7 +232,7 @@ function App() {
                 </div>
               </div>
             </li>
-            <li className="card w-1/5 bg-white rounded-md">
+            <li className="card md:w-1/5 mb-5 bg-white rounded-md">
               <img
                 src="/images/image-confetti.jpg"
                 alt="logo"
@@ -200,8 +255,8 @@ function App() {
           </ul>
         </div>
       </div>
-      <footer className="bg-dark-blue h-44 flex flex-row justify-around">
-        <div className="section1 w-1/5 flex flex-col justify-around my-5">
+      <footer className="bg-dark-blue md:h-44 flex md:flex-row flex-col justify-around">
+        <div className="section1 md:w-1/5 flex flex-col md:justify-around place-items-center my-5">
           <div className="logo">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +297,7 @@ function App() {
             </svg>
           </div>
           <div className="icons">
-            <ul className="icons-list flex flex-row justify-between w-40">
+            <ul className="icons-list flex flex-row justify-between w-40 md:p-0 py-5">
               <li className="icon-list-item">
                 <a href="/">
                   <img src="/images/icon-facebook.svg" alt="facebook-icon" />
@@ -271,36 +326,35 @@ function App() {
             </ul>
           </div>
         </div>
-        <div className="section2 text-md w-1/5 text-grayish-blue flex items-center">
-          <ul className="info-list flex flex-col flex-wrap justify-between w-full h-1/2 items-start">
-            <li className="info-list-item">
+        <div className="section2 md:text-md md:w-1/5 text-lg text-grayish-blue flex items-center">
+          <ul className="info-list flex flex-col flex-wrap justify-between place-items-center w-full md:h-1/2 md:items-start">
+            <li className="info-list-item md:p-0 pb-2">
               <a href="/">About Us</a>
             </li>
-            <li className="icon-list-item">
+            <li className="icon-list-item md:p-0 pb-2">
               <a href="/">Contact</a>
             </li>
-            <li className="icon-list-item">
+            <li className="icon-list-item md:p-0 pb-2">
               <a href="/">Blog</a>
             </li>
-            <li className="icon-list-item">
+            <li className="icon-list-item md:p-0 pb-2">
               <a href="/">Careers</a>
             </li>
-            <li className="icon-list-item">
+            <li className="icon-list-item md:p-0 pb-2">
               <a href="/">Support</a>
             </li>
-            <li className="icon-list-item">
+            <li className="icon-list-item md:p-0 pb-2">
               <a href="/">Privacy Policy</a>
             </li>
           </ul>
         </div>
-        <div className="section3 text-md w-1/4 text-grayish-blue flex flex-col items-end justify-center">
+        <div className="section3 text-md md:w-1/4 text-grayish-blue flex flex-col md:items-end items-center justify-center md:p-0 py-5">
           <div className="registerButton bg-gradient-to-r from-lime-green to-bright-cyan hover:from-light-lime-green hover:to-light-bright-cyan cursor-pointer text-very-light-gray mt-2 px-8 py-3 rounded-full font-semibold w-1/2">
             <a href="/">Request Invite</a>
           </div>
           <div className="copyright my-5"> © Easybank. All Rights Reserved</div>
         </div>
       </footer>
-      {/* <img src="/images/bg-intro-desktop.svg" alt="logo" /> */}
     </div>
   );
 }
